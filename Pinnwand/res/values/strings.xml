@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pinnwand</string>
+    <string name="hello_world">Hello world and hello mobile datenbanken!</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
