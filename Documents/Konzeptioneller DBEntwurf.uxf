@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>248</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>_Thread_
+--
+Name: String
+Verfasser: String
+Beschreibung: String
+Datum: Time
+Deadline: Time</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>248</y>
+      <w>168</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>_Notiz_
+--
+Verfasser: String
+Kommentar: String
+Zeitpunkt: Time
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>264</y>
+      <w>152</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+hat &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>24</y>
+      <w>168</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>_User_
+--
+Nickname: String
+Passwort: String
+E-Mail: String
+Vorname: String
+Nachname: String
+Geburtsdatum: Date
+Wohnort: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>224</x>
+      <y>64</y>
+      <w>264</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+verfasst &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0;290.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>128</y>
+      <w>72</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..n
+verfasst &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+</diagram>
