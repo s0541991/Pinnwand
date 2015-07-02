@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pinnwand</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_register">Register</string>
+    <string name="signup">Sign Up</string>
+	<string name="username">Username</string>
+	<string name="password">Password</string>
+
+</resources>
