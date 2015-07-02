@@ -2,39 +2,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
 	android:layout_height="match_parent"
-	android:layout_width="match_parent" >
+	android:layout_width="match_parent"
+	android:padding="10dp" >
 	
-	<TextView
-	    android:layout_width="wrap_content"
-	    android:text="@string/username"
-	    android:layout_height="wrap_content"
-	 />
 	
 	<EditText
 	    android:id="@+id/edit_UserName"
 		android:layout_width="match_parent"
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
+		android:hint="Username"	
 	/>
 	
-	<TextView
-	    android:layout_width="wrap_content"
-	    android:text="@string/password"
-	    android:layout_height="wrap_content"
-	 />
 	
 	<EditText
 	    android:id="@+id/edit_Password"
 		android:layout_width="match_parent"
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
+		android:hint="Password"
+		android:layout_below="@+id/edit_UserName"
 	/>
 	
 	<Button
 	    android:id="@+id/b_Login"
 	    android:text="@string/title_activity_login"
+        android:layout_marginBottom="10dp"    
 	    android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_below="@+id/edit_Password"
 	/>
+	
+    <TextView
+        android:id="@+id/text_SignUpLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="No User? Sign up here"
+        android:layout_below="@+id/b_Login"
+        android:textStyle="bold" />
 
 </RelativeLayout>

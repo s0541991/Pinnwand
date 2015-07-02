@@ -5,6 +5,7 @@
 	android:layout_width="match_parent">
 	
 	<TextView
+	    android:id="@+id/TopTV"
 	    android:layout_width="wrap_content"
 	    android:text="Persönliche Daten"
 	    android:layout_height="wrap_content"
@@ -16,6 +17,7 @@
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
 		android:hint="Vorname"
+		android:layout_below="@+id/TopTV"
 	/>
 	
 	<EditText
@@ -24,6 +26,7 @@
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
 		android:hint="Nachname"
+		android:layout_below="@+id/edit_Vorname"
 	/>
 	
 	<EditText
@@ -32,6 +35,7 @@
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
 		android:hint="Geburtsdatum"
+		android:layout_below="@+id/edit_Nachname"
 	/>
 	
 	<EditText
@@ -40,6 +44,7 @@
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
 		android:hint="Wohnort"
+		android:layout_below="@+id/edit_Geburtsdatum"
 	/>
 	
 	<EditText
@@ -48,12 +53,15 @@
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
 		android:hint="Email"
+		android:layout_below="@+id/edit_Wohnort"
 	/>
 	
 	<TextView
+	    android:id="@+id/secondTV"
 	    android:layout_width="wrap_content"
 	    android:text="Forum Daten"
 	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/edit_Email"
 	 />
 	
 	<EditText
@@ -62,6 +70,7 @@
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
 		android:hint="@string/username"
+		android:layout_below="@+id/secondTV"
 	/>
 	
 	<EditText
@@ -70,6 +79,7 @@
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
 		android:hint="@string/password"
+		android:layout_below="@+id/edit_Username"
 	/>
 	
 	<Button
@@ -77,5 +87,6 @@
 	    android:text="@string/signup"
 	    android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_below="@+id/edit_Password"
 	/>
 </RelativeLayout>
