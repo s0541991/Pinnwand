@@ -89,4 +89,13 @@
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/edit_Password"
 	/>
+	
+	<TextView
+        android:id="@+id/text_Return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Return to Log in"
+        android:layout_below="@+id/b_SignUp"
+        android:textStyle="bold" />
 </RelativeLayout>

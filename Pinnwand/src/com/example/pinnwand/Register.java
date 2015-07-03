@@ -7,12 +7,14 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Register extends Activity implements View.OnClickListener{
 
 	Button b_SignUp;
 	EditText edit_Vorname, edit_Nachname, edit_Geburtsdatum, edit_Wohnort;
 	EditText edit_Email, edit_Username, edit_Password;
+	TextView text_Return;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class Register extends Activity implements View.OnClickListener{
 		
 		b_SignUp = (Button) findViewById(R.id.b_SignUp);
 		b_SignUp.setOnClickListener(this);
+		
+		text_Return = (TextView) findViewById(R.id.text_Return);
+		text_Return.setOnClickListener(this);
 	}
 
 	@Override
@@ -37,7 +42,9 @@ public class Register extends Activity implements View.OnClickListener{
 		switch(v.getId()){
 			case R.id.b_SignUp:
 				break;
-		
+			case R.id.text_Return:
+					startActivity(new Intent(Register.this, Login.class));
+				break;
 		}
 	}
 
