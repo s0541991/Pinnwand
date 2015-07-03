@@ -34,6 +34,14 @@
             android:name=".MeineThreads"
             android:label="@string/title_activity_meine_threads" >
         </activity>
+        <activity
+            android:name=".MeinKonto"
+            android:label="@string/title_activity_mein_konto" >
+        </activity>
+        <activity
+            android:name=".Mitglied"
+            android:label="@string/title_activity_mitglied" >
+        </activity>
     </application>
 
 </manifest>

@@ -11,7 +11,8 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="title_activity_meine_threads">MeineThreads</string>
+    <string name="title_activity_mein_konto">MeinKonto</string>
+    <string name="personal">Persönliche Daten</string>
+    <string name="title_activity_mitglied">Mitglied</string>
 
-	
-    
 </resources>
