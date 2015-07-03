@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:id="@+id/group1">
+        <item android:id="@+id/suche" android:title="Suche"></item>
+        <item android:id="@+id/neu" android:title="Neu"></item>
+        <item android:id="@+id/mein_konto" android:title="Mein Konto"></item>
+        <item android:id="@+id/meine_threads" android:title="Meine Threads"></item>
+        <item android:id="@+id/aktualisieren" android:title="Aktualisieren"></item>
+        <item android:id="@+id/logout" android:title="@string/logout"></item>
+    </group>
+    
+</menu>

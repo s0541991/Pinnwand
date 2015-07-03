@@ -30,6 +30,10 @@
             android:name=".Register"
             android:label="@string/title_activity_register" >
         </activity>
+        <activity
+            android:name=".MeineThreads"
+            android:label="@string/title_activity_meine_threads" >
+        </activity>
     </application>
 
 </manifest>

@@ -36,7 +36,7 @@ public class Login extends Activity implements View.OnClickListener{
 		// TODO Auto-generated method stub
 		switch(v.getId()){
 			case R.id.b_Login:		//fallst id vom onClick = b_login ist
-				
+					startActivity(new Intent(Login.this, MeineThreads.class));
 				
 				break;
 			case R.id.text_SignUpLink:	//afu sign up link geclick 
