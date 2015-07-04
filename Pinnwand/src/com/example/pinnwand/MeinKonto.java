@@ -42,6 +42,7 @@ public class MeinKonto extends Activity {
 			case R.id.suche:
 				break;	
 			case R.id.neu:
+					startActivity(new Intent(MeinKonto.this, Neu.class));
 				break;
 			case R.id.mein_konto:
 					startActivity(new Intent(MeinKonto.this, MeinKonto.class));

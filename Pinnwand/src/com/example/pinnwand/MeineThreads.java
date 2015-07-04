@@ -36,10 +36,11 @@ public class MeineThreads extends Activity {
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		switch(item.getItemId()){
+		switch(item.getItemId()){	//choose between the context menu activitys
 			case R.id.suche:
 				break;	
 			case R.id.neu:
+					startActivity(new Intent(MeineThreads.this, Neu.class));
 				break;
 			case R.id.mein_konto:
 					startActivity(new Intent(MeineThreads.this, MeinKonto.class));

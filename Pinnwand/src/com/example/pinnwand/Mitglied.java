@@ -40,6 +40,7 @@ public class Mitglied extends Activity {
 			case R.id.suche:
 				break;	
 			case R.id.neu:
+					startActivity(new Intent(Mitglied.this, Neu.class));
 				break;
 			case R.id.mein_konto:
 					startActivity(new Intent(Mitglied.this, MeinKonto.class));

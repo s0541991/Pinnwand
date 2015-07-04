@@ -14,5 +14,6 @@
     <string name="title_activity_mein_konto">MeinKonto</string>
     <string name="personal">Persönliche Daten</string>
     <string name="title_activity_mitglied">Mitglied</string>
+    <string name="title_activity_neu">Neu</string>
 
 </resources>

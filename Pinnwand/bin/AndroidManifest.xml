@@ -42,6 +42,10 @@
             android:name=".Mitglied"
             android:label="@string/title_activity_mitglied" >
         </activity>
+        <activity
+            android:name=".Neu"
+            android:label="@string/title_activity_neu" >
+        </activity>
     </application>
 
 </manifest>
