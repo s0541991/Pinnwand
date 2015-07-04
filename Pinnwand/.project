@@ -30,4 +30,11 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/com/example/pinnwand/User.java</name>
+			<type>1</type>
+			<location>/Users/anhnguyenhoang/Dropbox/Mat Lon/DB embedded/User.java</location>
+		</link>
+	</linkedResources>
 </projectDescription>
