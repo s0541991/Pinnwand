@@ -47,6 +47,7 @@ public class PinnwandActivity extends Activity{
 					userLocalStore.clearUserData();			//loescht userdaten der logged in ist
 					userLocalStore.setUserLoggedIn(false);	//setzt log in status auf falsch (logged out)
 					startActivity(new Intent(PinnwandActivity.this, Login.class));
+					finish();
 				break;
 		}
 		return super.onContextItemSelected(item);

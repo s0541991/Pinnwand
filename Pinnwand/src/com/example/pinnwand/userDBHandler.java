@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class userDBHandler extends SQLiteOpenHelper{
-	private static final int DATABASE_VERSION = 3;
+	private static final int DATABASE_VERSION = 1;
 	private static final String DATABASE_NAME = "user.db";
 	private static final String TABLE_NAMEU = "User";
 	private static final String COL_UID = "uId";
@@ -19,22 +19,22 @@ public class userDBHandler extends SQLiteOpenHelper{
     public static final String COL_COUNTRY = "country";
     public static final String COL_BDAY = "bDay";
     
-    public userDBHandler(Context context, String username, SQLiteDatabase.CursorFactory factory, int version){
+    public userDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
     	super (context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
     
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
-		String query = "create table" + TABLE_NAMEU + " ("
+		String query = "create table " + TABLE_NAMEU + " ("
 		    		+ COL_UID + " integer primary key autoincrement, "
-		    		+ COL_USERNAME + "text not null, "
-		    		+ COL_PASSWORD + "text not null, "
-		    		+ COL_FIRSTNAME + "text, "
-		    		+ COL_LASTNAME + "text, "
-		    		+ COL_EMAIL + "text, "
-		    		+ COL_COUNTRY + "text, "
-		    		+ COL_BDAY + "text"
+		    		+ COL_USERNAME + " text not null, "
+		    		+ COL_PASSWORD + " text not null, "
+		    		+ COL_FIRSTNAME + " text, "
+		    		+ COL_LASTNAME + " text, "
+		    		+ COL_EMAIL + " text, "
+		    		+ COL_COUNTRY + " text, "
+		    		+ COL_BDAY + " text "
 		    		+ ");";
 		db.execSQL(query);
 	}

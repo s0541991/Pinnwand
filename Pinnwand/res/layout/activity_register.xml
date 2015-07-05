@@ -12,7 +12,7 @@
 	 />
 	
 	<EditText
-	    android:id="@+id/edit_Vorname"
+	    android:id="@+id/edit_firstName"
 		android:layout_width="match_parent"
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
 	/>
 	
 	<EditText
-	    android:id="@+id/edit_Nachname"
+	    android:id="@+id/edit_lastName"
 		android:layout_width="match_parent"
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
 	/>
 	
 	<EditText
-	    android:id="@+id/edit_Geburtsdatum"
+	    android:id="@+id/edit_bDay"
 		android:layout_width="match_parent"
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
 	/>
 	
 	<EditText
-	    android:id="@+id/edit_Wohnort"
+	    android:id="@+id/edit_country"
 		android:layout_width="match_parent"
 		android:layout_marginBottom="10dp"
 		android:layout_height="wrap_content"

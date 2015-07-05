@@ -1,8 +1,5 @@
 package com.example.pinnwand;
 
-
-import android.support.v7.app.ActionBarActivity;
-import android.app.Activity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -66,6 +63,7 @@ public class Login extends PinnwandActivity implements View.OnClickListener{
 					
 					if(verifizierung()==true){
 						startActivity(new Intent(Login.this, MeineThreads.class));
+						finish();
 					}
 					else{
 						
