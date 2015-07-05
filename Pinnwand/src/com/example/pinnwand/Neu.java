@@ -25,11 +25,12 @@ public class Neu extends Activity implements View.OnClickListener{
 		b_create.setOnClickListener(this);
 	}
 
+	
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch(v.getId()){
-		case R.id.b_create:
+			case R.id.b_create:
 				//create new thread
 			break;
 		}
