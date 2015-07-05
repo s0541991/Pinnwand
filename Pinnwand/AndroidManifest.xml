@@ -50,6 +50,10 @@
             android:name=".PinnwandActivity"
             android:label="@string/title_activity_pinnwand" >
         </activity>
+        <activity
+            android:name=".Suche"
+            android:label="@string/title_activity_suche" >
+        </activity>
     </application>
 
 </manifest>

@@ -16,5 +16,6 @@
     <string name="title_activity_mitglied">Mitglied</string>
     <string name="title_activity_neu">Neu</string>
     <string name="title_activity_pinnwand">PinnwandActivity</string>
+    <string name="title_activity_suche">Suche</string>
 
 </resources>

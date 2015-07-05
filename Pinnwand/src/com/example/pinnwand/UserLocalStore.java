@@ -26,6 +26,7 @@ public class UserLocalStore {
 		spEditor.commit();
 	}
 	
+	
 	public User getLoggedInUser(){
 		String username = userLocalDatabase.getString("username", "");
 		String password = userLocalDatabase.getString("pasword", "");
@@ -40,13 +41,26 @@ public class UserLocalStore {
 		return storedUser;
 	}
 	
+	//setted  ob user logged in ist oder nicht
 	public void setUserLoggedIn(boolean loggedIn){
 		SharedPreferences.Editor spEditor = userLocalDatabase.edit();
 		spEditor.putBoolean("loggedIn", loggedIn);
 		spEditor.commit();
 	}
 	
+	//boolean um zu sagen ob user logged in ist
+	public boolean getUserLoggedIn(){
+		if(userLocalDatabase.getBoolean("loggedIn", false)){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+	}
+	
 	public void clearUserData(){
+
 		SharedPreferences.Editor spEditor = userLocalDatabase.edit();
 		spEditor.clear();
 		spEditor.commit();
