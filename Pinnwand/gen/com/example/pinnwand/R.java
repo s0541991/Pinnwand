@@ -2229,6 +2229,7 @@ containing a value of this type.
         public static final int title_activity_meine_threads=0x7f0a001b;
         public static final int title_activity_mitglied=0x7f0a001e;
         public static final int title_activity_neu=0x7f0a001f;
+        public static final int title_activity_pinnwand=0x7f0a0020;
         public static final int title_activity_register=0x7f0a0016;
         public static final int username=0x7f0a0019;
     }

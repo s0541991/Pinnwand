@@ -15,5 +15,6 @@
     <string name="personal">Persönliche Daten</string>
     <string name="title_activity_mitglied">Mitglied</string>
     <string name="title_activity_neu">Neu</string>
+    <string name="title_activity_pinnwand">PinnwandActivity</string>
 
 </resources>

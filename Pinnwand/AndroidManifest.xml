@@ -46,6 +46,10 @@
             android:name=".Neu"
             android:label="@string/title_activity_neu" >
         </activity>
+        <activity
+            android:name=".PinnwandActivity"
+            android:label="@string/title_activity_pinnwand" >
+        </activity>
     </application>
 
 </manifest>

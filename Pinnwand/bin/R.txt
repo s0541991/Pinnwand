@@ -624,6 +624,7 @@ int string title_activity_mein_konto 0x7f0a001c
 int string title_activity_meine_threads 0x7f0a001b
 int string title_activity_mitglied 0x7f0a001e
 int string title_activity_neu 0x7f0a001f
+int string title_activity_pinnwand 0x7f0a0020
 int string title_activity_register 0x7f0a0016
 int string username 0x7f0a0019
 int style AlertDialog_AppCompat 0x7f0b0040
