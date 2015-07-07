@@ -21,7 +21,7 @@ public class Suche extends Activity implements View.OnClickListener{
 		setContentView(R.layout.activity_suche);
 		
 		et_suche = (EditText) findViewById(R.id.et_suche);
-		threadDB = new ThreadDBHandler(this);
+		threadDB = new ThreadDBHandler(getApplicationContext());
 		
 		b_suche = (Button) findViewById(R.id.b_suche);
 		b_suche.setOnClickListener(this);
@@ -36,7 +36,4 @@ public class Suche extends Activity implements View.OnClickListener{
 				break;
 		}
 	}
-	
-
-
 }

@@ -16,7 +16,7 @@ public class DBHandler extends SQLiteOpenHelper {
 	 */
 	public DBHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
-		Log.d("nhanh", "constructor");
+		Log.d("DBHandler", "constructor");
 	}
 
 	@Override

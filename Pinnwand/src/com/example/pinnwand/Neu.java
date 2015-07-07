@@ -28,7 +28,7 @@ public class Neu extends Activity implements View.OnClickListener {
 		b_create = (Button) findViewById(R.id.b_create);
 		b_create.setOnClickListener(this);
 		
-		newThread = new ThreadDBHandler(Neu.this);
+		newThread = new ThreadDBHandler(getApplicationContext());
 	}
 
 	@Override

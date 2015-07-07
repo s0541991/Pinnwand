@@ -14,7 +14,6 @@ import android.widget.Button;
 //klasse um Kontext menu ueberall zu implementieren
 public class PinnwandActivity extends FragmentActivity {
 	Button kontext_menu;
-	UserDBHandler userDB;
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -44,7 +43,8 @@ public class PinnwandActivity extends FragmentActivity {
 			break;
 		case R.id.logout:
 			startActivity(new Intent(PinnwandActivity.this, Login.class));
-			userDB.close();
+			PinnwandApplication appState = ((PinnwandApplication) getApplicationContext());
+			appState.setCurrentUid(-1);
 			finish();
 			break;
 		}

@@ -41,9 +41,8 @@ public class Register extends PinnwandActivity implements View.OnClickListener {
 		text_Return.setOnClickListener(this);
 
 		Log.d("nhanh", "test");
-
-		userDB = new UserDBHandler(this);
-
+		
+		userDB = new UserDBHandler(getApplicationContext());
 	}
 
 	@Override

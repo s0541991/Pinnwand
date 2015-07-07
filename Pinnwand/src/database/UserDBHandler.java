@@ -2,6 +2,8 @@ package database;
 
 import java.util.ArrayList;
 
+import com.example.pinnwand.PinnwandApplication;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -14,6 +16,7 @@ public class UserDBHandler {
 	// database fields
 	private SQLiteDatabase db;
 	private DBHandler dbHandler;
+	private Context mContext;
 	// usertable columns
 	static final String TABLE_NAMEU = "User";
 	static final String COL_UID = "_uId";
@@ -30,10 +33,10 @@ public class UserDBHandler {
 			+ COL_PASSWORD + " TEXT, " + COL_FIRSTNAME + " TEXT, "
 			+ COL_LASTNAME + " TEXT, " + COL_EMAIL + " TEXT, " + COL_COUNTRY
 			+ " TEXT, " + COL_BDAY + " TEXT " + ")";
-	protected int currentUid;
 
 	public UserDBHandler(Context context) {
-		dbHandler = new DBHandler(context);
+		mContext = context;
+		dbHandler = new DBHandler(context); 
 		// open the database
 		try {
 			open();
@@ -42,7 +45,7 @@ public class UserDBHandler {
 			e.printStackTrace();
 		}
 
-		Log.d("nhanh", "UserDB constr 2");
+		Log.d("UserDBHandler", "constructor");
 	}
 
 	public void open() throws SQLException {
@@ -56,7 +59,7 @@ public class UserDBHandler {
 	// ================TABLE_NAMEU Functions================
 	// neuen User in die tabelle
 	public void addUser(User user) {
-		Log.d("nhanh", "addUser");
+		Log.d("UserDBHandler", "addUser");
 		db.insert(TABLE_NAMEU, null, toContentValues(user));
 		db.close();
 	}
@@ -65,7 +68,7 @@ public class UserDBHandler {
 
 	// change a user
 	public void changeUser(int uid, User user) {
-		Log.d("nhanh", "changeUser");
+		Log.d("UserDBHandler", "changeUser");
 		db.update(TABLE_NAMEU, toContentValues(user), COL_UID + " = " + uid,
 				null);
 	}
@@ -77,8 +80,7 @@ public class UserDBHandler {
 				null, null, null, null);
 		cursor.moveToFirst();
 		ArrayList<String> values = new ArrayList<String>();
-		Log.d("nhanh: uid = ", Integer.toString(uid));
-		Log.d("nhanh", Integer.toString(cursor.getCount()));
+		Log.d("UserDBHandler.getUser", Integer.toString(uid));
 		for (String column : columns) {
 			values.add(cursor.getString(cursor.getColumnIndex(column)));
 		}
@@ -109,23 +111,21 @@ public class UserDBHandler {
 			Log.d("nhanh", Integer.toString(cursor.getColumnCount()));
 			Log.d("nhanh",
 					cursor.getString(cursor.getColumnIndex(COL_USERNAME)));
-			currentUid = cursor.getInt(cursor.getColumnIndex(COL_UID));
+			int currentUid = cursor.getInt(cursor.getColumnIndex(COL_UID));
+			PinnwandApplication appState = ((PinnwandApplication) mContext.getApplicationContext());
+			appState.setCurrentUid(currentUid);
+			Log.d("UserDBHandler", "verifizierung: currentUid set to " + currentUid);
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public int getCurrentUid() {
-		return currentUid;
-	}
-
 	// print the database
 	public String databaseToString() {
 		String dbString = "";
 		String query = "SELECT * FROM " + TABLE_NAMEU + " WHERE 1";
-		Log.d("nhanh", query);
-
+		
 		// Cursor points to a location in your results
 		Cursor c = db.rawQuery(query, null);
 		// Move to the first row in your results

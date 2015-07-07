@@ -34,10 +34,7 @@ public class Login extends PinnwandActivity implements View.OnClickListener {
 
 		dbTest = (TextView) findViewById(R.id.dbTest);
 
-		Log.d("nhanh","works1");
-		userDB = new UserDBHandler(this);
-		Log.d("nhanh","works2");
-
+		userDB = new UserDBHandler(getApplicationContext());
 		printDatabase();
 	}
 
@@ -51,7 +48,7 @@ public class Login extends PinnwandActivity implements View.OnClickListener {
 
 			if (userDB.verifizierung(username, password) == true) {
 				Log.d("nhanh", "logged in");
-				Toast.makeText(Login.this, "Congrats: Login Successfull", Toast.LENGTH_LONG).show();
+				Toast.makeText(Login.this, "Congrats: Login Successful", Toast.LENGTH_LONG).show();
 
 				startActivity(new Intent(Login.this, MeineThreads.class));
 				finish();

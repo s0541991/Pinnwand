@@ -33,10 +33,11 @@ public class MeinKonto extends PinnwandActivity {
 		registerForContextMenu(kontext_menu);
 
 		// Set up database
-
-		userDB = new UserDBHandler(this);
-
-		currentUid = userDB.getCurrentUid();
+		userDB = new UserDBHandler(getApplicationContext());
+		
+		// Get user ID
+		PinnwandApplication appState = ((PinnwandApplication) getApplicationContext());
+		currentUid = appState.getCurrentUid();
 		Log.d("MeinKonto: currentUid", Integer.toString(currentUid));
 
 		populateWithDefaultValues();

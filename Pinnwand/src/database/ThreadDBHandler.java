@@ -65,6 +65,11 @@ public class ThreadDBHandler {
 		db.insert(TABLE_NAMET, null, values);
 		db.close();
 	}
+	
+	public ArrayList<PinnwandComment> getComments(int threadId) {
+		// TODO Need some MySQL
+		return null;
+	}
 
 	public ArrayList<PinnwandThread> getAllThreads() {
 		ArrayList<PinnwandThread> threadList = new ArrayList<PinnwandThread>();
