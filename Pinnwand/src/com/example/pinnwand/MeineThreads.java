@@ -1,20 +1,20 @@
 package com.example.pinnwand;
 
-import android.app.Activity;
-import android.content.Intent;
+import java.util.ArrayList;
+
+import database.DBHandler;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MeineThreads extends PinnwandActivity {
-	
+	TextView thread; 
 	Button kontext_menu;
+	DBHandler allThreads;
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -22,37 +22,20 @@ public class MeineThreads extends PinnwandActivity {
 		kontext_menu = (Button) findViewById(R.id.kontext_menu);
 		
 		registerForContextMenu(kontext_menu);
-	}	
 
-//	@Override
-//	public void onCreateContextMenu(ContextMenu menu, View v,
-//			ContextMenuInfo menuInfo) {
-//		// TODO Auto-generated method stub
-//		super.onCreateContextMenu(menu, v, menuInfo);
-//		MenuInflater inflate = getMenuInflater();
-//		inflate.inflate(R.menu.context, menu);
-//	}
-//
-//	@Override
-//	public boolean onContextItemSelected(MenuItem item) {
-//		// TODO Auto-generated method stub
-//		switch(item.getItemId()){	//choose between the context menu activitys
-//			case R.id.suche:
-//				break;	
-//			case R.id.neu:
-//					startActivity(new Intent(MeineThreads.this, Neu.class));
-//				break;
-//			case R.id.mein_konto:
-//					startActivity(new Intent(MeineThreads.this, MeinKonto.class));
-//				break;
-//			case R.id.meine_threads:
-//				break;
-//			case R.id.aktualisieren:
-//				break;
-//			case R.id.logout:
-//					startActivity(new Intent(MeineThreads.this, Login.class));
-//				break;
-//		}
-//		return super.onContextItemSelected(item);
-//	}
+		thread = (TextView) findViewById(R.id.thread);
+		Log.d("nhanh","entered MeineThreads");
+		allThreads = new DBHandler(MeineThreads.this); 
+
+		Log.d("nhanh", "ThreadDBHandler constructor successful");
+		printThreads();
+	}
+	
+	public void printThreads(){
+		Log.d("nhanh","there is no table");
+		ArrayList<String> threadList = allThreads.printThreadnamesToArrayList();
+		Log.d("nhanh","there is a table");
+		String currentThread = threadList.get(2);
+		thread.setText(currentThread);
+	}
 }
