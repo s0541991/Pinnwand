@@ -6,14 +6,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import database.User;
-import database.DBHandler;
+import database.UserDBHandler;
 
 public class MeinKonto extends PinnwandActivity {
 	private Button kontext_menu, change, reset;
-	private EditText et_vorname, et_nachname, et_geburtsdatum, et_wohnort, et_email, et_username, et_password;
-	private DBHandler userDB;
+	private EditText et_vorname, et_nachname, et_geburtsdatum, et_wohnort,
+			et_email, et_username, et_password;
+	private UserDBHandler userDB;
 	private int currentUid;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,14 +31,16 @@ public class MeinKonto extends PinnwandActivity {
 		et_password = (EditText) findViewById(R.id.password);
 
 		registerForContextMenu(kontext_menu);
-		
+
 		// Set up database
-		userDB = DBHandler.getInstance(getApplicationContext());
+
+		userDB = new UserDBHandler(this);
+
 		currentUid = userDB.getCurrentUid();
 		Log.d("MeinKonto: currentUid", Integer.toString(currentUid));
-		
+
 		populateWithDefaultValues();
-		
+
 		change.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -52,7 +55,7 @@ public class MeinKonto extends PinnwandActivity {
 				userDB.changeUser(currentUid, user);
 			}
 		});
-		
+
 		reset.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

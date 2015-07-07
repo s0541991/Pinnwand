@@ -1,7 +1,10 @@
 package database;
 
-public class PinnwandThread {
+import java.io.Serializable;
 
+public class PinnwandThread implements Serializable {
+	
+	private static final long serialVersionUID = 3845508773567681979L;
 	private int tId = -1;
 	private String name;
 	private String description;
@@ -14,6 +17,10 @@ public class PinnwandThread {
 		this.description = (description == null ? "" : description);
 		this.date = (date == null ? "" : date);
 		this.deadline = (deadline == null ? "" : deadline);
+	}
+	
+	public PinnwandThread() {
+		
 	}
 
 	public int getTId() {
@@ -40,9 +47,35 @@ public class PinnwandThread {
 		return userId;
 	}
 
-	@Override
+	public int gettId() {
+		return tId;
+	}
+
+	public void settId(int tId) {
+		this.tId = tId;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public void setDeadline(String deadline) {
+		this.deadline = deadline;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
 	public String toString() {
-		return "Thread(" + name + ", " + description + ", " + date + ", "
-				+ deadline + ") ";
+		return "{name: " + name + ", description: " + description + ", date: " + date + ", deadline: " + deadline + ", tId = " + tId + ", userId: " + userId + "}"; 
 	}
 }

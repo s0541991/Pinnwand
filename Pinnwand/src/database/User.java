@@ -106,16 +106,4 @@ public class User {
 		return "User(" + username + ", " + email + ", " + firstName + ", " + lastName + ", " + bDay + ", " + country
 				+ ") ";
 	}
-	
-	public ContentValues toContentValues() {
-		ContentValues values = new ContentValues();
-		values.put(DBHandler.COL_USERNAME, this.getUsername());
-		values.put(DBHandler.COL_PASSWORD, this.getPassword());
-		values.put(DBHandler.COL_FIRSTNAME, this.getFirstName());
-		values.put(DBHandler.COL_LASTNAME, this.getLastName());
-		values.put(DBHandler.COL_EMAIL, this.getEmail());
-		values.put(DBHandler.COL_COUNTRY, this.getCountry());
-		values.put(DBHandler.COL_BDAY, this.getbDay());
-		return values;
-	}
 }

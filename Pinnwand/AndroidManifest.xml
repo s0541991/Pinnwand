@@ -50,6 +50,10 @@
             android:name=".Suche"
             android:label="@string/title_activity_suche" >
         </activity>
+        <activity
+            android:name=".ReadThread"
+            android:label="@string/title_activity_read_thread" >
+        </activity>
     </application>
 
 </manifest>

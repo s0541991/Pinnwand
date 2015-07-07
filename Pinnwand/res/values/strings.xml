@@ -17,5 +17,7 @@
     <string name="title_activity_neu">Neu</string>
     <string name="title_activity_pinnwand">PinnwandActivity</string>
     <string name="title_activity_suche">Suche</string>
+    <string name="title_activity_read_thread">ReadThread</string>
+    <string name ="contextmenu">Kontextmenü</string>
 
 </resources>

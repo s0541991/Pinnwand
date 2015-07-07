@@ -12,7 +12,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText1"
+        android:layout_above="@+id/suche"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
@@ -20,27 +20,24 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="88dp"
-        android:text="Go!" />
-
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/et_suche"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="24dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_centerVertical="true"
         android:ems="10"
         android:hint="Suche" >
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/b_suche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_suche"
+        android:layout_centerHorizontal="true"
+        android:text="Go!" />
 
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.pinnwand;
 
 import database.User;
 import database.DBHandler;
+import database.UserDBHandler;
 import android.os.Bundle;
 import android.util.Log;
 import android.content.Intent;
@@ -18,7 +19,7 @@ public class Register extends PinnwandActivity implements View.OnClickListener {
 	EditText edit_Email, edit_Username, edit_Password;
 	TextView text_Return;
 	SQLiteDatabase db;
-	DBHandler userDB;
+	UserDBHandler userDB;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,9 @@ public class Register extends PinnwandActivity implements View.OnClickListener {
 		text_Return.setOnClickListener(this);
 
 		Log.d("nhanh", "test");
-		userDB = DBHandler.getInstance(getApplicationContext());
+
+		userDB = new UserDBHandler(this);
+
 	}
 
 	@Override
@@ -56,15 +59,18 @@ public class Register extends PinnwandActivity implements View.OnClickListener {
 			String password = edit_Password.getText().toString();
 
 			// constructor mit den eingabe variabeln
-			User newUser = new User(username, password, email, firstName, lastName, bDay, country);
+			User newUser = new User(username, password, email, firstName,
+					lastName, bDay, country);
 
 			// check if any of the fields are vaccant
 			if (username.equals("") || password.equals("")) {
-				Toast.makeText(getApplicationContext(), "Field Vaccant", Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "Field Vaccant",
+						Toast.LENGTH_LONG).show();
 				return;
 			} else {
 				userDB.addUser(newUser);
-				Toast.makeText(getApplicationContext(), "Successfully signed up!", Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(),
+						"Successfully signed up!", Toast.LENGTH_LONG).show();
 				Log.d("nhanh", "register user");
 			}
 			startActivity(new Intent(Register.this, Login.class));

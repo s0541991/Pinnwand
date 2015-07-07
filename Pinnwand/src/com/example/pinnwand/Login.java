@@ -1,6 +1,7 @@
 package com.example.pinnwand;
 
 import database.DBHandler;
+import database.UserDBHandler;
 import android.os.Bundle;
 import android.content.Intent;
 import android.util.Log;
@@ -15,7 +16,7 @@ public class Login extends PinnwandActivity implements View.OnClickListener {
 	private Button b_Login;
 	private EditText et_Username, et_Password;
 	private TextView text_SignUpLink, dbTest;
-	private DBHandler userDB;
+	private UserDBHandler userDB;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,9 @@ public class Login extends PinnwandActivity implements View.OnClickListener {
 
 		dbTest = (TextView) findViewById(R.id.dbTest);
 
-		userDB = DBHandler.getInstance(getApplicationContext());
+		Log.d("nhanh","works1");
+		userDB = new UserDBHandler(this);
+		Log.d("nhanh","works2");
 
 		printDatabase();
 	}

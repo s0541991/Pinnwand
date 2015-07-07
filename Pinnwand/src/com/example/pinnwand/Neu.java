@@ -1,6 +1,6 @@
 package com.example.pinnwand;
 
-import database.DBHandler;
+import database.ThreadDBHandler;
 import database.PinnwandThread;
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class Neu extends Activity implements View.OnClickListener {
 	EditText et_threadname, et_description;
 	Button b_create;
-	DBHandler newThread;
+	ThreadDBHandler newThread;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class Neu extends Activity implements View.OnClickListener {
 		b_create = (Button) findViewById(R.id.b_create);
 		b_create.setOnClickListener(this);
 		
-		newThread = new DBHandler(Neu.this);
+		newThread = new ThreadDBHandler(Neu.this);
 	}
 
 	@Override

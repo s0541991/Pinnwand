@@ -1,7 +1,9 @@
 package com.example.pinnwand;
 
+import database.UserDBHandler;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,8 +12,9 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.Button;
 
 //klasse um Kontext menu ueberall zu implementieren
-public class PinnwandActivity extends Activity {
+public class PinnwandActivity extends FragmentActivity {
 	Button kontext_menu;
+	UserDBHandler userDB;
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
@@ -41,6 +44,7 @@ public class PinnwandActivity extends Activity {
 			break;
 		case R.id.logout:
 			startActivity(new Intent(PinnwandActivity.this, Login.class));
+			userDB.close();
 			finish();
 			break;
 		}

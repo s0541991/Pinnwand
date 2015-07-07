@@ -1,34 +1,42 @@
 package com.example.pinnwand;
 
+import database.ThreadDBHandler;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
-public class Suche extends Activity {
+public class Suche extends Activity implements View.OnClickListener{
 
+	Button b_suche;
+	EditText et_suche;
+	ThreadDBHandler threadDB;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_suche);
+		
+		et_suche = (EditText) findViewById(R.id.et_suche);
+		threadDB = new ThreadDBHandler(this);
+		
+		b_suche = (Button) findViewById(R.id.b_suche);
+		b_suche.setOnClickListener(this);
 	}
-
+	
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.suche, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+	public void onClick(View v){
+		String suche = et_suche.getText().toString();
+		switch(v.getId()){
+			case R.id.b_suche:
+					
+				break;
 		}
-		return super.onOptionsItemSelected(item);
 	}
+	
+
+
 }
