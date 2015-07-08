@@ -2,6 +2,7 @@ package com.example.pinnwand;
 
 import database.ThreadDBHandler;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +36,9 @@ public class Suche extends PinnwandActivity implements View.OnClickListener{
 		String suche = et_suche.getText().toString();
 		switch(v.getId()){
 			case R.id.b_suche:
-					
+					PinnwandApplication appState = ((PinnwandApplication) this.getApplicationContext());
+					appState.setCurrentTid(threadDB.threadSuche(suche));	//gefundende ID einfuegen
+					startActivity(new Intent( this, ReadThread.class));
 				break;
 		}
 	}

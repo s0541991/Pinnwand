@@ -67,8 +67,8 @@ public class MeinKonto extends PinnwandActivity {
 
 	private void populateWithDefaultValues() {
 		User user = userDB.getUser(currentUid);
-		et_vorname.setText(user.getLastName());
-		et_nachname.setText(user.getFirstName());
+		et_vorname.setText(user.getFirstName());
+		et_nachname.setText(user.getLastName());
 		et_geburtsdatum.setText(user.getbDay());
 		et_wohnort.setText(user.getCountry());
 		et_email.setText(user.getEmail());

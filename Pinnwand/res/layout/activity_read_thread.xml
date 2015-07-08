@@ -1,14 +1,70 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-	android:layout_height="match_parent"
-	android:layout_width="match_parent">
-	
-	<Button
-	    android:id="@+id/kontext_menu"
-	    android:text="@string/contextmenu"
-	    android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-	/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/kontext_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contextmenu" />
+
+    <TextView
+        android:id="@+id/readThreadName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kontext_menu"
+        android:layout_centerHorizontal="true"
+        android:text="Thread name"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/readThreadDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/readThreadName"
+        android:layout_centerHorizontal="true"
+        android:text="Thread description"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:id="@+id/ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/readThreadDescription" >
+
+        <EditText
+            android:id="@+id/addComment"
+            android:layout_width="30sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/postComment" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/postComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/addComment"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="Post comment" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/readThreadComments"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/ll"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#CCCCCC"
+        android:dividerHeight="1dp"
+        android:paddingLeft="2dp" >
+    </ListView>
 
 </RelativeLayout>

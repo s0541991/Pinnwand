@@ -6,6 +6,7 @@ import database.ThreadDBHandler;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -61,12 +62,12 @@ public class MeineThreads extends PinnwandActivity {
 
 		@Override
 		public CharSequence getPageTitle(int i) {
-			return "THREAD " + threads.get(i).getName();
+			return "Thread " + threads.get(i).getName();
 		}
 
 		@Override
 		public int getCount() {
-			Log.d("nhanh", "# of threads = " + threads.size());
+			Log.d("MeineThreads", "# of threads = " + threads.size());
 			return threads.size();
 		}
 	}
@@ -78,8 +79,18 @@ public class MeineThreads extends PinnwandActivity {
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.activity_meine_threads_fragment, container, false);
 			Bundle args = getArguments();
-			PinnwandThread thread = (PinnwandThread) args.getSerializable(ARG_OBJECT);
-			((TextView) rootView.findViewById(android.R.id.text1)).setText(thread.getDescription());
+			final PinnwandThread thread = (PinnwandThread) args.getSerializable(ARG_OBJECT);
+			((TextView) rootView.findViewById(R.id.threadDescription)).setText(thread.getDescription());
+			
+			Button b_viewThread = (Button) rootView.findViewById(R.id.viewThread);
+			b_viewThread.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					PinnwandApplication appState = ((PinnwandApplication) getActivity().getApplicationContext());
+					appState.setCurrentTid(thread.getTId());
+					getActivity().startActivity(new Intent(getActivity(), ReadThread.class));
+				}
+			});
 			return rootView;
 		}
 	}

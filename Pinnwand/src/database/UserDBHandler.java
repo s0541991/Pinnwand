@@ -78,8 +78,6 @@ public class UserDBHandler {
 		db.close();
 	}
 
-	// delete a user
-
 	// change a user
 	public void changeUser(int uid, User user) {
 		Log.d("UserDBHandler", "changeUser");
@@ -110,7 +108,8 @@ public class UserDBHandler {
 
 		return user;
 	}
-
+	
+	//check if the user and password is true
 	public boolean verifizierung(String username, String password) {
 		// @formatter:off
 		open();
@@ -125,7 +124,7 @@ public class UserDBHandler {
 			Log.d("nhanh", Integer.toString(cursor.getColumnCount()));
 			Log.d("nhanh",
 					cursor.getString(cursor.getColumnIndex(COL_USERNAME)));
-			int currentUid = cursor.getInt(cursor.getColumnIndex(COL_UID));
+			int currentUid = cursor.getInt(cursor.getColumnIndex(COL_UID));	//save currentUid - know who is logged in
 			PinnwandApplication appState = ((PinnwandApplication) mContext.getApplicationContext());
 			appState.setCurrentUid(currentUid);
 			Log.d("UserDBHandler", "verifizierung: currentUid set to " + currentUid);
@@ -135,6 +134,20 @@ public class UserDBHandler {
 		}
 	}
 
+	//function to check if the registered username is taken
+	public boolean checkIfExist(String username){
+		open();
+		String query = "SELECT * FROM " + TABLE_NAMEU + " WHERE "
+				+ COL_USERNAME + "=" + "'" + username + "'";
+		// @formatter:on
+		Cursor cursor = db.rawQuery(query, null);
+		cursor.moveToFirst();
+		if ((cursor != null) && (cursor.getCount() > 0)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	// print the database
 	public String databaseToString() {
 		String dbString = "";

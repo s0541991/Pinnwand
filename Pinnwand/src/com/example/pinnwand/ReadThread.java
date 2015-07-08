@@ -1,24 +1,72 @@
 package com.example.pinnwand;
 
-import android.app.Activity;
+import java.util.ArrayList;
+
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import database.CommentDBHandler;
+import database.PinnwandComment;
+import database.PinnwandThread;
+import database.ThreadDBHandler;
 
 public class ReadThread extends PinnwandActivity {
-
-	Button kontext_menu;
+	private Button kontext_menu, b_postComment;
+	private TextView tv_threadName, tv_threadDescription;
+	private EditText et_addComment;
+	private ListView lv_comments;
+	private PinnwandThread currentThread;
+	private ArrayAdapter<PinnwandComment> mAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_read_thread);
 		
+		// Context menu
 		kontext_menu = (Button) findViewById(R.id.kontext_menu);
-		
 		registerForContextMenu(kontext_menu);
-
+		
+		// Read thread from database
+		PinnwandApplication appState = (PinnwandApplication) getApplicationContext();
+		final int currentTid = appState.getCurrentTid();
+		final int currentUserId = appState.getCurrentUid();
+		ThreadDBHandler threadsDB = new ThreadDBHandler(getApplicationContext());
+		currentThread = threadsDB.getThread(currentTid);
+		
+		// Set text
+		tv_threadName = (TextView) findViewById(R.id.readThreadName);
+		tv_threadDescription = (TextView) findViewById(R.id.readThreadDescription);
+		tv_threadName.setText(currentThread.getName());
+		tv_threadDescription.setText(currentThread.getDescription());
+		
+		// Populate ListView
+		lv_comments = (ListView) findViewById(R.id.readThreadComments);
+		ArrayList<PinnwandComment> comments = threadsDB.getComments(currentTid);
+		mAdapter = new ArrayAdapter<PinnwandComment>(this, R.layout.list_item, comments);
+		lv_comments.setAdapter(mAdapter);
+		
+		// Posting comment
+		b_postComment = (Button) findViewById(R.id.postComment);
+		b_postComment.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// Save comment to comments DB
+				et_addComment = (EditText) findViewById(R.id.addComment);
+				String newComment = et_addComment.getText().toString();
+				CommentDBHandler commentsDB = new CommentDBHandler(getApplicationContext());
+				commentsDB.addComment(new PinnwandComment(newComment, "", currentTid, currentUserId));
+				
+				// Clear field
+				et_addComment.setText("");
+			}
+		});
 	}
 
 

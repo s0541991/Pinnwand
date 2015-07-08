@@ -67,10 +67,17 @@ public class Register extends PinnwandActivity implements View.OnClickListener {
 						Toast.LENGTH_LONG).show();
 				return;
 			} else {
-				userDB.addUser(newUser);
-				Toast.makeText(getApplicationContext(),
-						"Successfully signed up!", Toast.LENGTH_LONG).show();
-				Log.d("nhanh", "register user");
+				if(userDB.checkIfExist(username)){
+					Toast.makeText(getApplicationContext(), "User existiert",
+							Toast.LENGTH_LONG).show();
+					return;
+				}
+				else{
+					userDB.addUser(newUser);
+					Toast.makeText(getApplicationContext(),
+							"Successfully signed up!", Toast.LENGTH_LONG).show();
+					Log.d("nhanh", "register user");
+				}
 			}
 			startActivity(new Intent(Register.this, Login.class));
 			finish();

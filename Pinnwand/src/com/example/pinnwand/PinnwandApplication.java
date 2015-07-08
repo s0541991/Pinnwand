@@ -5,6 +5,7 @@ import database.DBHandler;
 
 public class PinnwandApplication extends Application {
 	private int currentUid;
+	private int currentTid;
 	
 	@Override
 	public void onCreate() {
@@ -17,5 +18,13 @@ public class PinnwandApplication extends Application {
 
 	public void setCurrentUid(int currentUid) {
 		this.currentUid = currentUid;
+	}
+
+	public int getCurrentTid() {
+		return currentTid;
+	}
+
+	public void setCurrentTid(int currentTid) {
+		this.currentTid = currentTid;
 	}
 }

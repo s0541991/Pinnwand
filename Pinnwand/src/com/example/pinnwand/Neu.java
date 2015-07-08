@@ -38,18 +38,26 @@ public class Neu extends Activity implements View.OnClickListener {
 		String description = et_description.getText().toString();
 		String date = "";
 		String deadline = "";	//date + 3 months
+		
+		PinnwandApplication appState = (PinnwandApplication) getApplicationContext();
+		final int currentUserId = appState.getCurrentUid();
 		switch (v.getId()) {
 		case R.id.b_create:
 			// create new thread
-			PinnwandThread pinnwandThread = new PinnwandThread(threadname, description, date, deadline);
-			
-			if(threadname.equals("")){
-				Toast.makeText(getApplicationContext(), "threadname Vaccant", Toast.LENGTH_LONG).show();
-			}
-			else{
+
+		PinnwandThread pinnwandThread = new PinnwandThread(threadname, description, date, deadline, currentUserId);
+		
+		if(threadname.equals("")){
+			Toast.makeText(getApplicationContext(), "Thread name vacant", Toast.LENGTH_LONG).show();
+		}
+		else{
+
 				newThread.addThread(pinnwandThread);
-				Toast.makeText(getApplicationContext(), "thread created!", Toast.LENGTH_LONG).show();
+
+				Toast.makeText(getApplicationContext(), "Thread created!", Toast.LENGTH_LONG).show();
+
 				startActivity(new Intent(Neu.this, MeineThreads.class));
+				finish();
 			}
 			//date from this time will be passed to thread
 			break;

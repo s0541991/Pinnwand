@@ -63,7 +63,9 @@ public class Login extends PinnwandActivity implements View.OnClickListener {
 			break;
 		}
 	}
-
+	
+	
+	//test print to see if there are users
 	public void printDatabase() {
 		String dbString = userDB.databaseToString();
 		dbTest.setText(dbString);

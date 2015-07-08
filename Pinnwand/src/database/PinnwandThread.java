@@ -12,11 +12,12 @@ public class PinnwandThread implements Serializable {
 	private String deadline;
 	private int userId; // date?
 
-	public PinnwandThread(String name, String description, String date, String deadline) {
+	public PinnwandThread(String name, String description, String date, String deadline, int userId) {
 		this.name = (name == null ? "" : name);
 		this.description = (description == null ? "" : description);
 		this.date = (date == null ? "" : date);
 		this.deadline = (deadline == null ? "" : deadline);
+		this.userId = userId;
 	}
 	
 	public PinnwandThread() {

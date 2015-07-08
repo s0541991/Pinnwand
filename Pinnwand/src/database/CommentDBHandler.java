@@ -1,6 +1,8 @@
 package database;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -12,10 +14,10 @@ public class CommentDBHandler {
 	private SQLiteDatabase db;
 	private DBHandler dbHandler;
 
-	protected static final String TABLE_NAMEC = "Comment";
+	static final String TABLE_NAMEC = "Comment";
 	private static final String COL_NID = "nId";
-	private static final String COL_COMMENT = "comment";
-	private static final String COL_TIMESTAMP = "timestamp";
+	static final String COL_COMMENT = "comment";
+	static final String COL_TIMESTAMP = "timestamp";
 	protected static final String CREATE_COMMENT_TABLE = "CREATE TABLE "
 			+ TABLE_NAMEC
 			+ "(" 
@@ -71,5 +73,28 @@ public class CommentDBHandler {
 	public void close() {
 		dbHandler.close();
 	}
-
+	
+	
+	//==============TABLE_NAMEC functions================
+	
+	public void addComment(PinnwandComment comment) {
+		ContentValues values = new ContentValues();
+		values.put(COL_COMMENT, comment.getComment());
+		values.put(COL_TIMESTAMP, comment.getTimestamp());
+		values.put(ThreadDBHandler.COL_TID, comment.getThreadId());
+		values.put(UserDBHandler.COL_UID, comment.getUserId());
+		Log.d("nhanh","added Comment");
+		db.insert(TABLE_NAMEC, null, values);
+		db.close();
+	}
+	
+	public static PinnwandComment toComment(Cursor c) {
+		PinnwandComment comment = new PinnwandComment();
+		comment.setComment(c.getString(c.getColumnIndex(COL_COMMENT)));
+		comment.setTimestamp(c.getString(c.getColumnIndex(COL_TIMESTAMP)));
+		comment.setThreadId(c.getInt(c.getColumnIndex(ThreadDBHandler.COL_TID)));
+		comment.setUserId(c.getInt(c.getColumnIndex(UserDBHandler.COL_UID)));
+		// TODO add all fields of Comment
+		return comment;
+	}
 }
