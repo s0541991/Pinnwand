@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 
 
-public class Neu extends Activity implements View.OnClickListener {
+public class Neu extends PinnwandActivity implements View.OnClickListener {
 	EditText et_threadname, et_description;
 	Button b_create, kontext_menu;
 	ThreadDBHandler newThread;
@@ -22,6 +22,10 @@ public class Neu extends Activity implements View.OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_neu);
 
+		// Context menu
+		kontext_menu = (Button) findViewById(R.id.kontext_menu);
+		registerForContextMenu(kontext_menu);
+		
 		et_threadname = (EditText) findViewById(R.id.et_threadname);
 		et_description = (EditText) findViewById(R.id.et_description);
 

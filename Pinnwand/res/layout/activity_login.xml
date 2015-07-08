@@ -1,47 +1,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-	android:layout_height="match_parent"
-	android:layout_width="match_parent"
-	android:padding="10dp" >
-	
-	
-	<EditText
-	    android:id="@+id/edit_UserName"
-		android:layout_width="match_parent"
-		android:layout_marginBottom="10dp"
-		android:layout_height="wrap_content"
-		android:hint="@string/username"	
-	/>
-	
-	
-	<EditText
-	    android:id="@+id/edit_Password"
-		android:layout_width="match_parent"
-		android:layout_marginBottom="10dp"
-		android:layout_height="wrap_content"
-		android:hint="@string/password"
-		android:layout_below="@+id/edit_UserName"
-		android:inputType="textPassword"
-	/>
-	
-	<Button
-	    android:id="@+id/b_Login"
-	    android:text="@string/title_activity_login"
-        android:layout_marginBottom="10dp"    
-	    android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@+id/edit_Password"
-	/>
-	
+    android:padding="10dp" >
+
     <TextView
-        android:id="@+id/text_SignUpLink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="No User? Sign up here"
-        android:layout_below="@+id/b_Login"
-        android:textStyle="bold" />
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/edit_UserName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        android:text="@string/pinnwand"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/dbTest"
@@ -53,5 +29,45 @@
         android:layout_below="@+id/text_SignUpLink"
         android:layout_marginTop="31dp"
         android:text="" />
+
+    <TextView
+        android:id="@+id/text_SignUpLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="137dp"
+        android:text="No User? Sign up here"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/b_Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_SignUpLink"
+        android:layout_alignParentLeft="true"
+        android:text="@string/title_activity_login" />
+
+    <EditText
+        android:id="@+id/edit_Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/b_Login"
+        android:layout_alignLeft="@+id/b_Login"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/edit_UserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_Password"
+        android:layout_alignLeft="@+id/edit_Password"
+        android:ems="10"
+        android:hint="@string/username" />
 
 </RelativeLayout>

@@ -1952,7 +1952,7 @@ containing a value of this type.
         public static final int aktualisieren=0x7f090092;
         public static final int alertTitle=0x7f090030;
         public static final int always=0x7f090019;
-        public static final int b_Login=0x7f090051;
+        public static final int b_Login=0x7f090052;
         public static final int b_SignUp=0x7f09007c;
         public static final int b_create=0x7f09006e;
         public static final int b_suche=0x7f09007f;
@@ -1967,15 +1967,15 @@ containing a value of this type.
         public static final int contentPanel=0x7f090031;
         public static final int custom=0x7f090035;
         public static final int customPanel=0x7f090034;
-        public static final int dbTest=0x7f090053;
+        public static final int dbTest=0x7f090051;
         public static final int decor_content_parent=0x7f09003e;
         public static final int default_activity_button=0x7f090029;
         public static final int dialog=0x7f09001e;
         public static final int disableHome=0x7f09000d;
         public static final int dropdown=0x7f09001f;
         public static final int edit_Email=0x7f090079;
-        public static final int edit_Password=0x7f090050;
-        public static final int edit_UserName=0x7f09004f;
+        public static final int edit_Password=0x7f090054;
+        public static final int edit_UserName=0x7f090050;
         public static final int edit_Username=0x7f09007b;
         public static final int edit_bDay=0x7f090077;
         public static final int edit_country=0x7f090078;
@@ -2056,7 +2056,7 @@ containing a value of this type.
         public static final int text=0x7f09008a;
         public static final int text2=0x7f090088;
         public static final int textSpacerNoButtons=0x7f090033;
-        public static final int textView1=0x7f090054;
+        public static final int textView1=0x7f09004f;
         public static final int textView2=0x7f090056;
         public static final int textView3=0x7f090059;
         public static final int textView4=0x7f09005b;
@@ -2065,7 +2065,7 @@ containing a value of this type.
         public static final int textView7=0x7f090061;
         public static final int textView8=0x7f090063;
         public static final int text_Return=0x7f09007d;
-        public static final int text_SignUpLink=0x7f090052;
+        public static final int text_SignUpLink=0x7f090053;
         public static final int threadDescription=0x7f090069;
         public static final int time=0x7f090086;
         public static final int title=0x7f09002c;
@@ -2245,6 +2245,7 @@ containing a value of this type.
         public static final int logout=0x7f0a0017;
         public static final int password=0x7f0a001a;
         public static final int personal=0x7f0a001d;
+        public static final int pinnwand=0x7f0a0024;
         public static final int signup=0x7f0a0018;
         /**  Text to use when the number in a notification info is too large
          (greater than status_bar_notification_info_maxnum, defined in

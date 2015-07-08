@@ -27,9 +27,11 @@ public class PinnwandActivity extends FragmentActivity {
 		switch (item.getItemId()) { // choose between the context menu activitys
 		case R.id.suche:
 			startActivity(new Intent(PinnwandActivity.this, Suche.class));
+			finish();
 			break;
 		case R.id.neu:
 			startActivity(new Intent(PinnwandActivity.this, Neu.class));
+			finish();
 			break;
 		case R.id.mein_konto:
 			startActivity(new Intent(PinnwandActivity.this, MeinKonto.class));
@@ -37,9 +39,11 @@ public class PinnwandActivity extends FragmentActivity {
 			break;
 		case R.id.meine_threads:
 			startActivity(new Intent(PinnwandActivity.this, MeineThreads.class));
+			finish();
 			break;
 		case R.id.aktualisieren:
 			startActivity(new Intent(PinnwandActivity.this, this.getClass()));
+			finish();
 			break;
 		case R.id.logout:
 			startActivity(new Intent(PinnwandActivity.this, Login.class));

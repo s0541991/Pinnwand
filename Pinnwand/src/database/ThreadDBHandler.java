@@ -29,6 +29,7 @@ public class ThreadDBHandler {
 			+ " INTEGER NOT NULL, " + "FOREIGN KEY(" + UserDBHandler.COL_UID
 			+ ") REFERENCES " + UserDBHandler.TABLE_NAMEU + "("
 			+ UserDBHandler.COL_UID + ") ON DELETE CASCADE)";
+	public static final int THREAD_NOT_FOUND = -1;
 
 	// "FOREIGN KEY(COL_UID) REFERENCES TABLE_NAMEN(COL_UID) ON DELETE CASCADE"+
 	// ")";
@@ -125,8 +126,12 @@ public class ThreadDBHandler {
 		String query = "SELECT " + COL_TID + " FROM " + TABLE_NAMET + " WHERE "
 				+ COL_THREADNAME + "=" + "'" + threadName + "';";
 		Cursor c = db.rawQuery(query, null);
-		c.moveToFirst();
-		return c.getColumnIndex(COL_TID);
+		if (c.getCount() == 0) {
+			return THREAD_NOT_FOUND;
+		} else {
+			c.moveToFirst();
+			return c.getInt(c.getColumnIndex(COL_TID));
+		}
 	}
 
 	private PinnwandThread toThread(Cursor c) {

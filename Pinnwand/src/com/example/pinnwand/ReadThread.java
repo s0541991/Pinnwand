@@ -2,6 +2,7 @@ package com.example.pinnwand;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,6 +15,7 @@ import database.CommentDBHandler;
 import database.PinnwandComment;
 import database.PinnwandThread;
 import database.ThreadDBHandler;
+import database.UserDBHandler;
 
 public class ReadThread extends PinnwandActivity {
 	private Button kontext_menu, b_postComment;
@@ -21,7 +23,7 @@ public class ReadThread extends PinnwandActivity {
 	private EditText et_addComment;
 	private ListView lv_comments;
 	private PinnwandThread currentThread;
-	private ArrayAdapter<PinnwandComment> mAdapter;
+	private ArrayAdapter<String> mAdapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +49,14 @@ public class ReadThread extends PinnwandActivity {
 		
 		// Populate ListView
 		lv_comments = (ListView) findViewById(R.id.readThreadComments);
+		ArrayList<String> commentStrings = new ArrayList<String>();
 		ArrayList<PinnwandComment> comments = threadsDB.getComments(currentTid);
-		mAdapter = new ArrayAdapter<PinnwandComment>(this, R.layout.list_item, comments);
+		UserDBHandler usersDB = new UserDBHandler(getApplicationContext());
+		for (PinnwandComment comment : comments) {
+			String username = usersDB.getUser(comment.getUserId()).getUsername();
+			commentStrings.add(username + ": " + comment.getComment());
+		}
+		mAdapter = new ArrayAdapter<String>(this, R.layout.list_item, commentStrings);
 		lv_comments.setAdapter(mAdapter);
 		
 		// Posting comment
@@ -65,6 +73,8 @@ public class ReadThread extends PinnwandActivity {
 				
 				// Clear field
 				et_addComment.setText("");
+				startActivity(new Intent(ReadThread.this, ReadThread.class));
+				finish();
 			}
 		});
 	}

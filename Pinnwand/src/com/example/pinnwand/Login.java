@@ -35,7 +35,7 @@ public class Login extends PinnwandActivity implements View.OnClickListener {
 		dbTest = (TextView) findViewById(R.id.dbTest);
 
 		userDB = new UserDBHandler(getApplicationContext());
-		printDatabase();
+		//printDatabase();
 	}
 
 	@Override

@@ -1,5 +1,10 @@
 package database;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -22,6 +27,30 @@ public class DBHandler extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		Log.d("DBHandler", "onCreate");
+		//=================Zentrale Datenbank Verbindung Versuch fehlgeschlagen============
+//		Connection connect = null;
+//		String connString = "jdbc:mysql://141.45.176.41:3306/s0539895?";
+//		String driver = "net.sourceforge.jtds.jdbc.Driver";
+//
+//		try {
+//			Class.forName(driver).newInstance();
+//
+//			String username = "s0539895";
+//			String password = "wb59Sw88";
+//
+//			connect = DriverManager.getConnection(connString, username,
+//					password);
+//			Log.w("nhanh", "open");
+//
+//			Statement createTableU = connect.createStatement();
+//			ResultSet reset = createTableU
+//					.executeQuery(UserDBHandler.CREATE_USER_TABLE);
+//
+//			connect.close();
+//		} catch (Exception e) {
+//			Log.w("Error nhanh", "" + e.getMessage());
+//		}
+
 		db.execSQL(UserDBHandler.CREATE_USER_TABLE);
 		db.execSQL(ThreadDBHandler.CREATE_THREAD_TABLE);
 		db.execSQL(CommentDBHandler.CREATE_COMMENT_TABLE);
