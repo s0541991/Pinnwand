@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class Neu extends Activity implements View.OnClickListener {
 	EditText et_threadname, et_description;
-	Button b_create;
+	Button b_create, kontext_menu;
 	ThreadDBHandler newThread;
 
 	@Override

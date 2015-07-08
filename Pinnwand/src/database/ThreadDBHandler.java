@@ -17,18 +17,34 @@ public class ThreadDBHandler {
 	// thread table columns
 	static final String TABLE_NAMET = "Thread";
 	static final String COL_TID = "tId";
-	private static final String COL_THREADNAME = "threadName";
+	static final String COL_THREADNAME = "threadName";
 	private static final String COL_DESCRIPTION = "description";
 	private static final String COL_DATE = "date";
 	private static final String COL_DEADLINE = "deadline";
 	protected static final String CREATE_THREAD_TABLE = "CREATE TABLE "
-			+ TABLE_NAMET + "(" + COL_TID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_THREADNAME
-			+ " TEXT NOT NULL, " + COL_DESCRIPTION + " TEXT, " + COL_DATE
-			+ " TEXT, " + COL_DEADLINE + " TEXT, " + UserDBHandler.COL_UID
-			+ " INTEGER NOT NULL, " + "FOREIGN KEY(" + UserDBHandler.COL_UID
-			+ ") REFERENCES" + UserDBHandler.TABLE_NAMEU + "("
-			+ UserDBHandler.COL_UID + ") ON DELETE CASCADE";
+
+			+ TABLE_NAMET
+			+ "("
+			+ COL_TID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ COL_THREADNAME
+			+ " TEXT NOT NULL, "
+			+ COL_DESCRIPTION
+			+ " TEXT, "
+			+ COL_DATE
+			+ " TEXT, "
+			+ COL_DEADLINE
+			+ " TEXT, "
+			+ UserDBHandler.COL_UID
+			+ " INTEGER NOT NULL, "
+			+ "FOREIGN KEY("
+			+ UserDBHandler.COL_UID
+			+ ") REFERENCES "
+			+ UserDBHandler.TABLE_NAMEU
+			+ "("
+			+ UserDBHandler.COL_UID
+			+ ") ON DELETE CASCADE)";
+
 
 	// "FOREIGN KEY(COL_UID) REFERENCES TABLE_NAMEN(COL_UID) ON DELETE CASCADE"+
 	// ")";
@@ -74,7 +90,8 @@ public class ThreadDBHandler {
 	public ArrayList<PinnwandThread> getAllThreads() {
 		ArrayList<PinnwandThread> threadList = new ArrayList<PinnwandThread>();
 		SQLiteDatabase db = dbHandler.getWritableDatabase();
-		String query = "SELECT * FROM " + TABLE_NAMET + ";";
+		//thread mit der hoechsten ID zuuerst - neuester Thread
+		String query = "SELECT * FROM " + TABLE_NAMET + " ORDER BY " + COL_TID +" DESC;";
 
 		// Cursor points to a location in your results
 		Cursor c = db.rawQuery(query, null);

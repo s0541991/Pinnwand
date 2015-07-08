@@ -21,7 +21,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		Log.d("nhanh", "DBHandler.onCreate");
+		Log.d("DBHandler", "onCreate");
 		db.execSQL(UserDBHandler.CREATE_USER_TABLE);
 		db.execSQL(ThreadDBHandler.CREATE_THREAD_TABLE);
 		db.execSQL(CommentDBHandler.CREATE_COMMENT_TABLE);

@@ -8,7 +8,6 @@ public class PinnwandComment {
 	private int userId;
 	
 	public PinnwandComment(String Comment, String Timestamp) {
-		super();
 		this.Comment = (Comment==null?"":Comment); 	// this.Comment = Comment;
 		this.Timestamp = (Timestamp==null?"":Timestamp);	// this.Timestamp = Timestamp;
 	}

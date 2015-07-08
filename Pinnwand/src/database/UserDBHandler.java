@@ -28,11 +28,25 @@ public class UserDBHandler {
 	private static final String COL_COUNTRY = "country";
 	private static final String COL_BDAY = "bDay";
 	protected static final String CREATE_USER_TABLE = "CREATE TABLE "
-			+ TABLE_NAMEU + "(" + COL_UID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_USERNAME + " TEXT, "
-			+ COL_PASSWORD + " TEXT, " + COL_FIRSTNAME + " TEXT, "
-			+ COL_LASTNAME + " TEXT, " + COL_EMAIL + " TEXT, " + COL_COUNTRY
-			+ " TEXT, " + COL_BDAY + " TEXT " + ")";
+			+ TABLE_NAMEU
+			+ "("
+			+ COL_UID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+			+ COL_USERNAME
+			+ " TEXT, "
+			+ COL_PASSWORD
+			+ " TEXT, " 
+			+ COL_FIRSTNAME 
+			+ " TEXT, "
+			+ COL_LASTNAME 
+			+ " TEXT, " 
+			+ COL_EMAIL 
+			+ " TEXT, " 
+			+ COL_COUNTRY
+			+ " TEXT, "
+			+ COL_BDAY 
+			+ " TEXT "
+			+ ")";
 
 	public UserDBHandler(Context context) {
 		mContext = context;

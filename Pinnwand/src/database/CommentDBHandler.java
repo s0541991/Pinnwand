@@ -17,15 +17,41 @@ public class CommentDBHandler {
 	private static final String COL_COMMENT = "comment";
 	private static final String COL_TIMESTAMP = "timestamp";
 	protected static final String CREATE_COMMENT_TABLE = "CREATE TABLE "
-			+ TABLE_NAMEC + "(" + COL_NID
-			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_COMMENT
-			+ " TEXT NOT NULL, " + COL_TIMESTAMP + " TEXT, "
-			+ ThreadDBHandler.COL_TID + " INTEGER NOT NULL, "
-			+ UserDBHandler.COL_UID + " INTEGER NOT NULL, " + "FOREIGN KEY("
-			+ UserDBHandler.COL_UID + ") REFERENCES" + UserDBHandler.TABLE_NAMEU + "("
-			+ UserDBHandler.COL_UID + " ) ON DELETE CASCADE, " + "FOREIGN KEY("
-			+ ThreadDBHandler.COL_TID + ") REFERENCES " + ThreadDBHandler.TABLE_NAMET + "("
-			+ ThreadDBHandler.COL_TID + ") ON DELETE CASCADE)";
+			+ TABLE_NAMEC
+			+ "(" 
+			+ COL_NID
+			+ " INTEGER PRIMARY KEY AUTOINCREMENT, " 
+			+ COL_COMMENT
+			+ " TEXT NOT NULL, " 
+			+ COL_TIMESTAMP 
+			+ " TEXT, "
+			+ ThreadDBHandler.COL_TID 
+			+ " INTEGER NOT NULL, "
+			+ UserDBHandler.COL_UID 
+			+ " INTEGER NOT NULL, " 
+			+ "FOREIGN KEY("
+			+ UserDBHandler.COL_UID 
+			+ ") REFERENCES " 
+			+ UserDBHandler.TABLE_NAMEU 
+			+ "("
+			+ UserDBHandler.COL_UID 
+			+ " ) ON DELETE CASCADE, " 
+			+ "FOREIGN KEY("
+			+ ThreadDBHandler.COL_TID 
+			+ ") REFERENCES " 
+			+ ThreadDBHandler.TABLE_NAMET 
+			+ "("
+			+ ThreadDBHandler.COL_TID 
+			+ ") ON DELETE CASCADE)";
+
+
+		protected static final String RETURN_COMMENTS = "SELECT " + TABLE_NAMEC
+		+ "." + COL_COMMENT + "," + TABLE_NAMEC + "." + COL_TIMESTAMP + ","
+		+ ThreadDBHandler.TABLE_NAMET + "."
+		+ ThreadDBHandler.COL_THREADNAME + "FROM " + TABLE_NAMEC + ","
+		+ ThreadDBHandler.TABLE_NAMET + "where " + TABLE_NAMEC + "."
+		+ ThreadDBHandler.COL_TID + "=" + ThreadDBHandler.TABLE_NAMET + "."
+		+ ThreadDBHandler.COL_TID + ";";
 
 	public CommentDBHandler(Context context) {
 		dbHandler = new DBHandler(context);

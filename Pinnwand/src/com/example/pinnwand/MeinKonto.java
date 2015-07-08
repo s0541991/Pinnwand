@@ -46,8 +46,8 @@ public class MeinKonto extends PinnwandActivity {
 			@Override
 			public void onClick(View v) {
 				User user = new User();
-				user.setLastName(et_vorname.getText().toString());
-				user.setFirstName(et_nachname.getText().toString());
+				user.setFirstName(et_vorname.getText().toString());
+				user.setLastName(et_nachname.getText().toString());
 				user.setbDay(et_geburtsdatum.getText().toString());
 				user.setCountry(et_wohnort.getText().toString());
 				user.setEmail(et_email.getText().toString());

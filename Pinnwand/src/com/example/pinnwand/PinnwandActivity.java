@@ -39,7 +39,7 @@ public class PinnwandActivity extends FragmentActivity {
 			startActivity(new Intent(PinnwandActivity.this, MeineThreads.class));
 			break;
 		case R.id.aktualisieren:
-			startActivity(new Intent(PinnwandActivity.this, PinnwandActivity.class));
+			startActivity(new Intent(PinnwandActivity.this, this.getClass()));
 			break;
 		case R.id.logout:
 			startActivity(new Intent(PinnwandActivity.this, Login.class));

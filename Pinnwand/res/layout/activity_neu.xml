@@ -1,32 +1,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-	android:layout_height="match_parent"
-	android:layout_width="match_parent">
-	
-	<EditText
-	    android:id="@+id/et_threadname"
-	    android:hint="Threadname"
-	    android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-	/>
-	
-	<EditText
-	    android:id="@+id/et_description"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_above="@+id/b_create"
-	    android:layout_below="@+id/et_threadname"
-	    android:hint="Beschreibung"
-	    android:singleLine="false" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-	<Button
-	    android:id="@+id/b_create"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_alignParentBottom="true"
-	    android:layout_alignParentLeft="true"
-	    android:onClick="createButtonClicked"
-	    android:text="Create!" />
+    <Button
+        android:id="@+id/kontext_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kontextmenü" />
+
+    <EditText
+        android:id="@+id/et_threadname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/kontext_menu"
+        android:hint="Threadname" />
+
+    <EditText
+        android:id="@+id/et_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/b_create"
+        android:layout_below="@+id/et_threadname"
+        android:hint="Beschreibung"
+        android:singleLine="false" />
+
+    <Button
+        android:id="@+id/b_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="createButtonClicked"
+        android:text="Create!" />
 
 </RelativeLayout>
