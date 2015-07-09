@@ -27,3 +27,8 @@ Pinnwand/*.iml
 Pinnwand/*.ipr
 Pinnwand/*.iws
 Pinnwand/.idea/
+
+.DS_Store
+.metadata/
+.recommenders/
+appcompat_v7/

@@ -29,17 +29,17 @@ public class DBHandler extends SQLiteOpenHelper {
 		Log.d("DBHandler", "onCreate");
 		//=================Zentrale Datenbank Verbindung Versuch fehlgeschlagen============
 //		Connection connect = null;
-//		String connString = "jdbc:mysql://141.45.176.41:3306/s0539895?";
-//		String driver = "net.sourceforge.jtds.jdbc.Driver";
+//		
+//	String driver = "jdbc.mysql.jdbc.Driver";
 //
 //		try {
 //			Class.forName(driver).newInstance();
-//
-//			String username = "s0539895";
+//			String connString = "jdbc:mysql://141.45.176.41:3306/s0539895?";
+//			String root = "s0539895";
 //			String password = "wb59Sw88";
 //
-//			connect = DriverManager.getConnection(connString, username,
-//					password);
+//			connect = DriverManager.getConnection(connString, root, password) ;
+//
 //			Log.w("nhanh", "open");
 //
 //			Statement createTableU = connect.createStatement();
@@ -59,9 +59,9 @@ public class DBHandler extends SQLiteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		Log.d("nhanh", "DBHandler.onUpgrade");
-		db.execSQL("DROP TABLE IF EXISTS " + UserDBHandler.TABLE_NAMEU);
-		db.execSQL("DROP TABLE IF EXISTS " + ThreadDBHandler.TABLE_NAMET);
-		db.execSQL("DROP TABLE IF EXISTS " + CommentDBHandler.TABLE_NAMEC);
+//		db.execSQL("DROP TABLE IF EXISTS " + UserDBHandler.TABLE_NAMEU);
+//		db.execSQL("DROP TABLE IF EXISTS " + ThreadDBHandler.TABLE_NAMET);
+//		db.execSQL("DROP TABLE IF EXISTS " + CommentDBHandler.TABLE_NAMEC);
 
 		onCreate(db);
 	}

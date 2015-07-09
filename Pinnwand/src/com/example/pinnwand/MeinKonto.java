@@ -1,10 +1,12 @@
 package com.example.pinnwand;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import database.User;
 import database.UserDBHandler;
 
@@ -54,6 +56,8 @@ public class MeinKonto extends PinnwandActivity {
 				user.setUsername(et_username.getText().toString());
 				user.setPassword(et_password.getText().toString());
 				userDB.changeUser(currentUid, user);
+				Toast.makeText(getApplicationContext(), "Account updated!", Toast.LENGTH_LONG).show();
+				startActivity(new Intent(MeinKonto.this, MeineThreads.class));
 			}
 		});
 
