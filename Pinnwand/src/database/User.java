@@ -1,7 +1,5 @@
 package database;
 
-import android.content.ContentValues;
-
 public class User {
 
 	private int uId = -1;

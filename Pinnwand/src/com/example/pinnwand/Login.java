@@ -1,6 +1,5 @@
 package com.example.pinnwand;
 
-import database.DBHandler;
 import database.UserDBHandler;
 import android.os.Bundle;
 import android.content.Intent;

@@ -1,7 +1,5 @@
 package database;
 
-import android.database.Cursor;
-
 public class PinnwandComment {
 	private int nId = -1;
 	private String comment;
@@ -18,6 +16,10 @@ public class PinnwandComment {
 
 	public PinnwandComment() {
 		// TODO Auto-generated constructor stub
+		this.comment = "";
+		this.timestamp = "";
+		this.threadId = -1;
+		this.userId = -1;
 	}
 
 	public int getNId() {

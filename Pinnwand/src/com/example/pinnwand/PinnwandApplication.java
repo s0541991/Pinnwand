@@ -1,7 +1,6 @@
 package com.example.pinnwand;
 
 import android.app.Application;
-import database.DBHandler;
 
 public class PinnwandApplication extends Application {
 	private int currentUid;

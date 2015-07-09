@@ -1,7 +1,6 @@
 package com.example.pinnwand;
 
 import database.User;
-import database.DBHandler;
 import database.UserDBHandler;
 import android.os.Bundle;
 import android.util.Log;

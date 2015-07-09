@@ -1,6 +1,5 @@
 package com.example.pinnwand;
 
-import database.DBHandler;
 import database.PinnwandThread;
 import database.ThreadDBHandler;
 

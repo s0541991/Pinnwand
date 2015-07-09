@@ -2,7 +2,6 @@ package com.example.pinnwand;
 
 import database.ThreadDBHandler;
 import database.PinnwandThread;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
