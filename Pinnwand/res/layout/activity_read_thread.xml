@@ -52,7 +52,7 @@
             android:layout_alignBottom="@+id/addComment"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:text="Post comment" />
+            android:text="Post!" />
     </RelativeLayout>
 
     <ListView

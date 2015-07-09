@@ -149,7 +149,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/change"
-        android:text="Reset to saved" />
+        android:text="Reset" />
 
     <EditText
         android:id="@+id/password"
