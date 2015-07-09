@@ -4,6 +4,7 @@ import android.app.Application;
 
 public class PinnwandApplication extends Application {
 	private int currentUid;
+	private int currentClickedUid;
 	private int currentTid;
 	
 	@Override
@@ -15,10 +16,18 @@ public class PinnwandApplication extends Application {
 		return currentUid;
 	}
 
+	public int getCurrentClickedUid(){
+		return currentClickedUid;
+	}
+	
 	public void setCurrentUid(int currentUid) {
 		this.currentUid = currentUid;
 	}
 
+	public void setCurrentClickedUid(int currentClickedUid){
+		this.currentClickedUid = currentClickedUid;
+	}
+	
 	public int getCurrentTid() {
 		return currentTid;
 	}

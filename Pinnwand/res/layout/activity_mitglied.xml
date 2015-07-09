@@ -12,65 +12,59 @@
 	/>
 	
     <TextView
-	    android:id="@+id/TopTV"
-	    android:layout_width="wrap_content"
-	    android:text="@string/personal"
+        android:id="@+id/TopTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/kontext_menu"
+        android:text="@string/personal"
+        android:textSize="30sp" />
+
+	<TextView
+	    android:id="@+id/country"
+	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:layout_below="@+id/kontext_menu"
-	 />
-	
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/bDay"
+	    android:text="Wohnort"
+	    android:textSize="20sp" />
+
 	<TextView
-	    android:id="@+id/vorname"
-		android:layout_width="match_parent"
-		android:layout_marginBottom="10dp"
-		android:layout_height="wrap_content"
-		android:text="Vorname"
-		android:layout_below="@+id/TopTV"
-	/>
-	
+	    android:id="@+id/firstname"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/TopTV"
+	    android:layout_marginTop="86dp"
+	    android:text="Vorname"
+	    android:textSize="20sp" />
+
 	<TextView
-	    android:id="@+id/nachname"
-		android:layout_width="match_parent"
-		android:layout_marginBottom="10dp"
-		android:layout_height="wrap_content"
-		android:text="Nachname"
-		android:layout_below="@+id/vorname"
-	/>
-	
+	    android:id="@+id/lastname"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/firstname"
+	    android:text="Nachname"
+	    android:textSize="20sp" />
+
 	<TextView
-	    android:id="@+id/geburtsdatum"
-		android:layout_width="match_parent"
-		android:layout_marginBottom="10dp"
-		android:layout_height="wrap_content"
-		android:text="Geburtsdatum"
-		android:layout_below="@+id/nachname"
-	/>
-	
-	<TextView
-	    android:id="@+id/wohnort"
-		android:layout_width="match_parent"
-		android:layout_marginBottom="10dp"
-		android:layout_height="wrap_content"
-		android:text="Wohnort"
-		android:layout_below="@+id/geburtsdatum"
-	/>
-	
-	<TextView
-	    android:id="@+id/email"
-		android:layout_width="match_parent"
-		android:layout_marginBottom="10dp"
-		android:layout_height="wrap_content"
-		android:text="Email"
-		android:layout_below="@+id/wohnort"
-	/>
+	    android:id="@+id/bDay"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/lastname"
+	    android:text="Geburtsdatum"
+	    android:textSize="20sp" />
 
 	<TextView
 	    android:id="@+id/username"
-		android:layout_width="match_parent"
-		android:layout_marginBottom="10dp"
-		android:layout_height="wrap_content"
-		android:text="Username"
-		android:layout_below="@+id/email"
-	/>
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/country"
+	    android:text="Username"
+	    android:textSize="20sp" />
 	
 </RelativeLayout>
