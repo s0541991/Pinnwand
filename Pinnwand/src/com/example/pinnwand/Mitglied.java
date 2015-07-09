@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class Mitglied extends PinnwandActivity {
 	Button kontext_menu;
-	TextView tv_firstname, tv_lastname, tv_email, tv_bday, tv_country, tv_username;
+	TextView tv_firstname, tv_lastname, tv_bday, tv_country, tv_username, tv_email;
 	private UserDBHandler userDB;
 	private int currentClickedUid;
 	@Override
@@ -21,9 +21,9 @@ public class Mitglied extends PinnwandActivity {
 
 		tv_firstname = (TextView) findViewById(R.id.firstname);
 		tv_lastname = (TextView) findViewById(R.id.lastname);
-		tv_email = (TextView) findViewById(R.id.email);
 		tv_bday = (TextView) findViewById(R.id.bDay);
 		tv_country = (TextView) findViewById(R.id.country);
+		tv_email = (TextView) findViewById(R.id.email);
 		tv_username = (TextView) findViewById(R.id.username);
 		registerForContextMenu(kontext_menu);
 		

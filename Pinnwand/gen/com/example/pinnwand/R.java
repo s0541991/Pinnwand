@@ -1952,7 +1952,7 @@ containing a value of this type.
         public static final int aktualisieren=0x7f090096;
         public static final int alertTitle=0x7f090030;
         public static final int always=0x7f090019;
-        public static final int bDay=0x7f09006e;
+        public static final int bDay=0x7f09006d;
         public static final int b_Login=0x7f090052;
         public static final int b_SignUp=0x7f090080;
         public static final int b_create=0x7f090072;
@@ -1966,7 +1966,7 @@ containing a value of this type.
         public static final int chronometer=0x7f09008b;
         public static final int collapseActionView=0x7f09001a;
         public static final int contentPanel=0x7f090031;
-        public static final int country=0x7f09006f;
+        public static final int country=0x7f09006c;
         public static final int custom=0x7f090035;
         public static final int customPanel=0x7f090034;
         public static final int dbTest=0x7f090051;
@@ -1992,7 +1992,7 @@ containing a value of this type.
         public static final int et_threadname=0x7f090070;
         public static final int expand_activities_button=0x7f090027;
         public static final int expanded_menu=0x7f090037;
-        public static final int firstname=0x7f09006c;
+        public static final int firstname=0x7f09006e;
         public static final int geburtsdatum=0x7f09005c;
         public static final int group1=0x7f090091;
         public static final int home=0x7f090000;
@@ -2002,7 +2002,7 @@ containing a value of this type.
         public static final int image=0x7f090028;
         public static final int info=0x7f09008f;
         public static final int kontext_menu=0x7f090057;
-        public static final int lastname=0x7f09006d;
+        public static final int lastname=0x7f09006f;
         public static final int line1=0x7f090089;
         public static final int line3=0x7f09008d;
         public static final int listMode=0x7f09000a;
